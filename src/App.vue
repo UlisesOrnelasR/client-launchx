@@ -7,6 +7,9 @@
           <router-link to="/explorers" class="nav-link">Explorers</router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/missionCommanders" class="nav-link">Mission Commanders</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/add" class="nav-link">Agregar Explorer</router-link>
         </li>
       </div>
@@ -14,6 +17,7 @@
     <div class="container mt-3">
       <router-view />
     </div>
+    
   </div>
 </template>
 <script>
