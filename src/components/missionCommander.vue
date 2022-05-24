@@ -20,6 +20,18 @@
           v-model="currentMissionCommander.mainStack"
         />
       </div>
+      <div class="form-group">
+        <label for="title">Current Enrollment</label>
+        <input type="text" class="form-control" id="title"
+          v-model="currentMissionCommander.currentEnrollment"
+        />
+      </div>
+      <div class="form-group">
+        <label for="title">Has Azure Certification</label>
+        <input type="text" class="form-control" id="title"
+          v-model="currentMissionCommander.hasAzureCertification"
+        />
+      </div>
     </form>
     <button class="btn btn-danger mr-2" @click="deleteMissionCommander">
       Eliminar 
