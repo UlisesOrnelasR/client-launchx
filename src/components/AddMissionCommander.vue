@@ -35,6 +35,30 @@
           name="mainStack"
         />
       </div>
+      <div class="form-group">
+        <label for="title">Current Enrollment</label>
+        <input
+          type="checkbox"
+          checked="checked"
+          class="form-control"
+          id="currentEnrollment"
+          required
+          v-model="missionCommander.currentEnrollment"
+          name="currentEnrollment"
+        />
+      </div>
+      <div class="form-group">
+        <label for="title">Has Azure Certification</label>
+        <input
+          type="checkbox"
+          checked="checked"
+          class="form-control"
+          id="hasAzureCertification"
+          required
+          v-model="missionCommander.hasAzureCertification"
+          name="hasAzureCertification"
+        />
+      </div>
       <button @click="saveMissionCommander" class="btn btn-success">Agregar</button>
     </div>
     <div v-else>
@@ -54,7 +78,9 @@ export default {
         id: null,
         name: "",
         username: "",
-        mainStack: ""
+        mainStack: "",
+        currentEnrollment: Boolean,
+        hasAzureCertification: Boolean
       },
       submitted: false
     };
@@ -64,7 +90,10 @@ export default {
       var data = {
         name: this.missionCommander.name,
         username: this.missionCommander.username,
-        mainStack: this.missionCommander.mainStack
+        mainStack: this.missionCommander.mainStack,
+        currentEnrollment: this.missionCommander.currentEnrollment,
+        hasAzureCertification: this.missionCommander.hasAzureCertification
+
       };
       missionCommanderService.create(data)
         .then(response => {
