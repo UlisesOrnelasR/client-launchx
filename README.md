@@ -48,7 +48,9 @@ Nuestras reglas en el archivo `.eslintrc.js`
 Automatiza la ejecución de lint en el `package.json`
 ```
 "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --dest build",
+    "lint": "vue-cli-service lint",
     "linter": "node ./node_modules/eslint/bin/eslint.js .",
     "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
   }
@@ -91,4 +93,4 @@ La app estará lista para conectarse con la API que hicimos anteriormente.✅
 #### Comming soon
 - Test
 - Mejorar el front
-- Estilo con ESlint airbnb
+
