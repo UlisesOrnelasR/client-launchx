@@ -17,6 +17,43 @@ npm run build
 #### Modifica la configuración
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+#### Dependencia de ESlint para darle estilo Airbnb al código🤵
+`npm install eslint --save-dev`
+
+Comando para configurar eslint al estilo Airbnb
+`npm init @eslint/config`
+
+Nuestras reglas en el archivo `.eslintrc.js`
+```
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"]
+    }
+}
+```
+Automatiza la ejecución de lint en el `package.json`
+```
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "linter": "node ./node_modules/eslint/bin/eslint.js .",
+    "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
+  }
+```
+Para ejecutarlo `npm run linter`, para corregir los detalles `npm run linter-fix`
 #### Axios nos ayudara a hacer peticiones HTTP
 `npm install axios`
 #### Instalando CORS para consultar el API
